@@ -11,11 +11,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-primary text-white hover:bg-primary/90 shadow-card hover:shadow-card-hover",
+    "bg-primary text-white hover:bg-primary/90 shadow-card hover:shadow-card-hover hover:-translate-y-1",
   secondary:
-    "bg-secondary text-white hover:bg-secondary/90 shadow-card hover:shadow-card-hover",
+    "bg-secondary text-white hover:bg-secondary/90 shadow-card hover:shadow-card-hover hover:-translate-y-1",
   outline:
-    "border border-border bg-card text-text-primary hover:bg-hover",
+    "border border-border bg-card text-text-primary hover:bg-hover hover:shadow-card hover:-translate-y-1",
   ghost: "text-text-secondary hover:bg-hover hover:text-text-primary",
 };
 

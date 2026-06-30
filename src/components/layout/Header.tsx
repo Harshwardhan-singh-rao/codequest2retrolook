@@ -20,14 +20,14 @@ export function Header({ title }: { title?: string }) {
   const [userName, setUserName] = useState("Harshwardhan");
 
   useEffect(() => {
-    const storedName = localStorage.getItem("cq_user_name");
+    const storedName = sessionStorage.getItem("cq_user_name");
     if (storedName) {
       setUserName(storedName);
     }
   }, []);
 
   return (
-    <header className="sticky top-0 z-30 flex items-center justify-between border-b border-border bg-background/80 px-4 py-4 backdrop-blur-md sm:px-6">
+    <header className="sticky top-0 z-30 flex items-center justify-between bg-background/80 px-4 py-4 sm:px-6 pt-6 backdrop-blur-md">
       <div className="flex items-center gap-3">
         <button
           onClick={toggleMobile}
@@ -56,21 +56,11 @@ export function Header({ title }: { title?: string }) {
           )}
         </button>
 
-        <button
-          onClick={toggleTheme}
-          className="rounded-button p-2 text-text-secondary hover:bg-hover hover:text-text-primary"
-          aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-        >
-          {theme === "dark" ? (
-            <HiOutlineSun className="h-5 w-5" />
-          ) : (
-            <HiOutlineMoon className="h-5 w-5" />
-          )}
-        </button>
+
 
         <div className="hidden items-center gap-2 sm:flex">
-          <div className="flex items-center gap-2 rounded-full bg-white/5 border border-white/10 pl-1.5 pr-3 py-1.5">
-            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/30 text-[10px] font-bold text-primary">
+          <div className="flex items-center gap-2 rounded-full bg-card shadow-sm border border-border pl-1.5 pr-3 py-1.5">
+            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/20 text-[10px] font-bold text-primary">
               {userName.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2)}
             </div>
             <span className="text-sm font-semibold text-text-primary">

@@ -23,6 +23,7 @@ import {
   HiOutlineCircleStack,
   HiOutlinePresentationChartBar,
   HiOutlinePuzzlePiece,
+  HiOutlineArrowRight,
   HiOutlineMap,
   HiOutlineChatBubbleLeftRight,
   HiOutlineLockClosed,
@@ -87,17 +88,17 @@ function NavLink({
       }}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "group relative flex items-center gap-3 rounded-button px-3 py-2 text-sm font-medium transition-all duration-200",
+        "group relative flex items-center gap-3 rounded-[12px] px-3 py-2.5 text-sm font-medium transition-all duration-200",
         isActive
-          ? "bg-primary/15 text-primary"
-          : "text-gray-400 hover:bg-white/5 hover:text-white",
+          ? "text-black font-bold"
+          : "text-black/70 hover:bg-black/20 hover:shadow-[0_4px_12px_rgba(0,0,0,0.6)] hover:text-black",
         isLocked && "cursor-not-allowed opacity-60",
       )}
     >
       {isActive && (
         <motion.span
           layoutId="sidebar-active"
-          className="absolute inset-0 rounded-button bg-primary/15"
+          className="absolute inset-0 rounded-[12px] bg-black/10 shadow-sm"
           transition={{ type: "spring", stiffness: 350, damping: 30 }}
         />
       )}
@@ -105,13 +106,14 @@ function NavLink({
       {!collapsed && (
         <>
           <span className="relative z-10 flex-1 truncate">{item.label}</span>
-          {item.badge === "soon" && (
+          {item.badge === "soon" ? (
             <span className="relative z-10 rounded bg-accent/20 px-1.5 py-0.5 text-[10px] font-bold uppercase text-accent">
               Soon
             </span>
-          )}
-          {item.badge === "locked" && (
+          ) : item.badge === "locked" ? (
             <HiOutlineLockClosed className="relative z-10 h-3.5 w-3.5 text-gray-500" />
+          ) : (
+            <HiOutlineArrowRight className="relative z-10 h-5 w-5 shrink-0 stroke-[2.5px] text-black -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
           )}
         </>
       )}
@@ -127,37 +129,41 @@ export function Sidebar() {
     <div className="flex h-full flex-col">
       <div className="flex items-center justify-between px-4 py-5">
         {!collapsed && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary font-[family-name:var(--font-poppins)] text-sm font-bold text-white">
-              CQ
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2.5">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black shadow-sm">
+              <span className="text-[#8c6b4a] text-xs font-bold font-mono tracking-tighter">&lt;/&gt;</span>
             </div>
-            <span className="font-[family-name:var(--font-poppins)] text-lg font-bold text-white">
+            <span className="font-[family-name:var(--font-poppins)] text-[18px] tracking-tight font-bold text-black">
               CodeQuest
             </span>
           </motion.div>
         )}
         {collapsed && (
-          <div className="mx-auto flex h-9 w-9 items-center justify-center rounded-xl bg-primary font-[family-name:var(--font-poppins)] text-sm font-bold text-white">
-            CQ
+          <div 
+            className="mx-auto flex h-8 w-8 items-center justify-center rounded-full bg-black shadow-sm cursor-pointer hover:scale-105 transition-transform"
+            onClick={toggleCollapsed}
+            title="Expand Sidebar"
+          >
+            <span className="text-[#8c6b4a] text-xs font-bold font-mono tracking-tighter">&lt;/&gt;</span>
           </div>
         )}
         <button
           onClick={closeMobile}
-          className="rounded-lg p-1.5 text-gray-400 hover:bg-white/10 hover:text-white md:hidden"
+          className="rounded-lg p-1.5 text-black/70 hover:bg-black/10 hover:text-black md:hidden"
           aria-label="Close sidebar"
         >
           <HiOutlineXMark className="h-5 w-5" />
         </button>
       </div>
 
-      <nav className="flex-1 space-y-1 overflow-y-auto px-3" aria-label="Main navigation">
+      <nav className="flex-1 space-y-1 overflow-y-auto px-3 hide-scrollbar" aria-label="Main navigation">
         {sections.map((section) => {
           const items = navItems.filter((n) => n.section === section);
           if (items.length === 0) return null;
           return (
             <div key={section} className="mb-3">
               {!collapsed && (
-                <p className="mb-1 px-3 text-[10px] font-semibold uppercase tracking-wider text-gray-500">
+                <p className="mb-2 px-3 text-[11px] font-bold uppercase tracking-wider text-black/60">
                   {sectionLabels[section]}
                 </p>
               )}
@@ -178,7 +184,7 @@ export function Sidebar() {
         {!collapsed && (
           <Link
             href="/support"
-            className="mb-2 flex items-center gap-2 rounded-button px-3 py-2 text-sm text-gray-400 hover:bg-white/5 hover:text-white"
+            className="mb-3 flex items-center gap-3 rounded-[12px] px-3 py-2.5 text-sm font-medium text-black/70 hover:bg-black/20 hover:shadow-[0_4px_12px_rgba(0,0,0,0.6)] hover:text-black"
           >
             <HiOutlineChatBubbleLeftRight className="h-4 w-4" />
             Feedback
@@ -186,10 +192,10 @@ export function Sidebar() {
         )}
         <Link
           href="/login"
-          onClick={() => localStorage.removeItem("cq_user_name")}
+          onClick={() => sessionStorage.removeItem("cq_user_name")}
           className={cn(
-            "flex w-full items-center gap-3 rounded-button px-3 py-2.5 text-sm text-gray-400 transition-colors hover:bg-white/5 hover:text-white",
-            collapsed && "justify-center",
+            "flex w-full items-center gap-3 rounded-[12px] bg-black px-4 py-3 text-sm font-medium text-white transition-all hover:bg-black/80 shadow-sm",
+            collapsed && "justify-center px-0",
           )}
           aria-label="Logout"
         >
@@ -217,24 +223,24 @@ export function Sidebar() {
 
       <motion.aside
         initial={false}
-        animate={{ width: collapsed ? 80 : 280 }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
         className={cn(
-          "fixed left-0 top-0 z-50 hidden h-screen flex-col overflow-hidden bg-sidebar md:flex",
-          "rounded-r-sidebar",
+          "relative z-20 hidden h-full flex-col md:flex shadow-lg rounded-[2.5rem] transition-all duration-300",
+          collapsed ? "w-[80px]" : "w-[280px]"
         )}
         aria-label="Sidebar"
       >
-        {sidebarContent}
+        <div className="flex h-full w-full flex-col overflow-hidden rounded-[2.5rem] bg-sidebar">
+          {sidebarContent}
+        </div>
         <button
           onClick={toggleCollapsed}
-          className="absolute -right-3 top-20 z-10 hidden h-6 w-6 items-center justify-center rounded-full border border-border bg-card text-text-secondary shadow-card hover:text-text-primary md:flex"
+          className="absolute -right-3 top-20 z-50 hidden h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-black text-white shadow-lg hover:scale-110 transition-transform md:flex"
           aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
           {collapsed ? (
-            <HiOutlineChevronRight className="h-3.5 w-3.5" />
+            <HiOutlineChevronRight className="h-4 w-4" />
           ) : (
-            <HiOutlineChevronLeft className="h-3.5 w-3.5" />
+            <HiOutlineChevronLeft className="h-4 w-4" />
           )}
         </button>
       </motion.aside>

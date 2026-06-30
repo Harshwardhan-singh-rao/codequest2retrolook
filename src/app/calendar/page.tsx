@@ -1,6 +1,6 @@
-import { CalendarWidget } from "@/components/calendar/CalendarWidget";
+import { Calendar } from "@/components/calendar/Calendar";
 import { PageHeader } from "@/components/layout/PageHeader";
-import { calendarEvents, dayFocus } from "@/data/mock";
+import { calendarEvents } from "@/data/mock";
 
 export default function CalendarPage() {
   return (
@@ -9,8 +9,8 @@ export default function CalendarPage() {
         title="Calendar" 
         description="Manage your schedule, deadlines, and upcoming live classes." 
       />
-      <div className="w-full mt-4 flex-1">
-        <CalendarWidget events={calendarEvents} dayFocus={dayFocus} />
+      <div className="w-full mt-4 flex-1 min-h-[800px]">
+        <Calendar initialEvents={calendarEvents} />
       </div>
     </div>
   );

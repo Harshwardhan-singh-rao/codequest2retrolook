@@ -49,9 +49,15 @@ export interface Achievement {
 export interface CalendarEvent {
   id: string;
   title: string;
-  date: string;
-  time: string;
-  type: "class" | "deadline" | "event";
+  date: string;       // YYYY-MM-DD
+  startTime: string;  // HH:MM
+  endTime: string;    // HH:MM
+  type: "class" | "deadline" | "event" | "visit" | "planning" | "test";
+  room?: string;
+  participants?: string[];
+  badge?: string;
+  color?: "yellow" | "blue" | "beige" | "pink";
+  showJoin?: boolean;
 }
 
 export interface DayFocus {

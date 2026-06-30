@@ -1,40 +1,46 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #8b5cf6;
-  --secondary: #14b8a6;
-  --accent: #f43f5e;
-  --background: #fafafa;
-  --sidebar: #18181b;
-  --card: #ffffff;
-  --text-primary: #18181b;
-  --text-secondary: #71717a;
-  --border: #e4e4e7;
-  --hover: #f4f4f5;
-  --shadow-default: 0px 4px 20px rgba(0, 0, 0, 0.05);
-  --shadow-hover: 0px 10px 30px rgba(139, 92, 246, 0.15);
-  --radius-card: 16px;
-  --radius-button: 10px;
-  --radius-input: 10px;
-  --radius-sidebar: 20px;
+  --primary: #f59e0b; /* Amber/Orange accent */
+  --secondary: #0a0a0a; /* Black button color */
+  --accent: #3b82f6; /* Blue for links/accents */
+  --outer-background: #efe8df; /* Browser window background */
+  --background: #f5eee6; /* App main content background */
+  --sidebar: #8c6b4a; /* Darker brown sidebar */
+  --card: #ffffff; /* White cards */
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b635e;
+  --border: #d4c5b8;
+  --hover: #e6dcd3;
+  --shadow-default: 0px 8px 30px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0px 25px 50px rgba(0, 0, 0, 0.15), 0px 10px 15px rgba(0, 0, 0, 0.1);
+  --radius-card: 24px;
+  --radius-button: 16px;
+  --radius-input: 16px;
+  --radius-sidebar: 30px;
 }
 
 .dark {
-  --background: #09090b;
-  --sidebar: #09090b;
-  --card: #18181b;
-  --text-primary: #fafafa;
-  --text-secondary: #a1a1aa;
-  --border: #27272a;
-  --hover: #27272a;
-  --shadow-default: 0px 4px 20px rgba(0, 0, 0, 0.4);
-  --shadow-hover: 0px 10px 30px rgba(139, 92, 246, 0.2);
+  --primary: #f59e0b;
+  --secondary: #0a0a0a;
+  --accent: #3b82f6;
+  --outer-background: #efe8df;
+  --background: #f5eee6;
+  --sidebar: #8c6b4a;
+  --card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b635e;
+  --border: #d4c5b8;
+  --hover: #e6dcd3;
+  --shadow-default: 0px 8px 30px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0px 25px 50px rgba(0, 0, 0, 0.25), 0px 10px 15px rgba(0, 0, 0, 0.15);
 }
 
 @theme inline {
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
+  --color-outer-background: var(--outer-background);
   --color-background: var(--background);
   --color-sidebar: var(--sidebar);
   --color-card: var(--card);
@@ -53,9 +59,19 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--outer-background);
   color: var(--text-primary);
   font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 h1,

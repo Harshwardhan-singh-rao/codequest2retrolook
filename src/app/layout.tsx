@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Poppins, Inter } from "next/font/google";
 import { Providers } from "@/components/Providers";
 import { AppShell } from "@/components/layout/AppShell";
@@ -30,9 +29,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable} h-full`} suppressHydrationWarning>
       <body className="min-h-full antialiased">
-        <Script id="theme-init" strategy="beforeInteractive">
-          {`try{var t=localStorage.getItem("codequest-theme");if(t==="dark")document.documentElement.classList.add("dark")}catch(e){}`}
-        </Script>
         <Providers>
           <AppShell>{children}</AppShell>
         </Providers>
