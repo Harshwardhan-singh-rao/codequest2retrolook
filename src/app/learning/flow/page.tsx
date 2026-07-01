@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { HiOutlineArrowLeft, HiOutlineCheck, HiOutlineLockClosed } from "react-icons/hi2";
-import { PageHeader } from "@/components/layout/PageHeader";
 
 const flowNodes = [
   { id: 1, title: "HTML & CSS Fundamentals", type: "completed", description: "Learn the building blocks of the web." },
@@ -23,11 +22,6 @@ export default function FlowPathPage() {
         <HiOutlineArrowLeft className="h-4 w-4" />
         Back to Dashboard
       </Link>
-      
-      <PageHeader
-        title="Your Flow Path"
-        description="Your personalized learning journey to become a Full Stack Engineer."
-      />
 
       <div className="relative mx-auto mt-8 flex w-full max-w-3xl flex-col items-center">
         {/* Vertical Line connecting nodes */}

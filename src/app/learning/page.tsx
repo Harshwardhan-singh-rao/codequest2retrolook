@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { PageHeader } from "@/components/layout/PageHeader";
 import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Badge } from "@/components/ui/Badge";
@@ -17,10 +16,6 @@ export default function LearningPage() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <PageHeader
-        title="Learning"
-        description="Your active learning paths and completed courses"
-      />
       <div className="space-y-6">
         <section>
           <h2 className="mb-3 font-[family-name:var(--font-poppins)] text-lg font-bold text-text-primary">

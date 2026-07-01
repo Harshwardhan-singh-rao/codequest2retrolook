@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { PageHeader } from "@/components/layout/PageHeader";
 import { Card, CardTitle } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { currentUser } from "@/data/mock";
@@ -13,7 +12,6 @@ export default function SettingsPage() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <PageHeader title="Settings" description="Manage your account preferences" />
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <Card hover>
           <CardTitle>Profile</CardTitle>

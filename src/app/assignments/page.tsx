@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { PageHeader } from "@/components/layout/PageHeader";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -21,10 +20,6 @@ export default function AssignmentsPage() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <PageHeader
-        title="Assignments"
-        description="Track and submit your course assignments"
-      />
       <Card>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">

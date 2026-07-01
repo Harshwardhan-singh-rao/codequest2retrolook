@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { HiOutlineCircleStack, HiOutlineCodeBracket, HiOutlineCommandLine } from "react-icons/hi2";
-import { PageHeader } from "@/components/layout/PageHeader";
 import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Badge } from "@/components/ui/Badge";
@@ -20,10 +19,6 @@ export default function PracticeHubPage() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <PageHeader
-        title="Practice Hub"
-        description="Sharpen your skills with hands-on practice"
-      />
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {practiceTypes.map((practice, i) => {
           const Icon = icons[i];

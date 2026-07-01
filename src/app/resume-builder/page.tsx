@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { HiOutlineCheckCircle, HiOutlineDocumentText } from "react-icons/hi2";
-import { PageHeader } from "@/components/layout/PageHeader";
 import { Card, CardTitle } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { ProgressBar } from "@/components/ui/ProgressBar";
@@ -19,10 +18,6 @@ export default function ResumeBuilderPage() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <PageHeader
-        title="Resume Builder"
-        description="Build a professional resume step by step"
-      />
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <Card className="lg:col-span-2" hover>
           <CardTitle>Resume Preview</CardTitle>

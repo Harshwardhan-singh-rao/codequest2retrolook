@@ -29,6 +29,9 @@ import {
   HiOutlineLockClosed,
   HiOutlineSquares2X2,
   HiOutlineClipboardDocumentCheck,
+  HiOutlineRectangleStack,
+  HiOutlineGlobeAlt,
+  HiOutlineSpeakerWave,
 } from "react-icons/hi2";
 import { cn } from "@/utils/cn";
 import { useSidebar } from "@/context/SidebarContext";
@@ -56,10 +59,15 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   projects: HiOutlineSquares2X2,
   hub: HiOutlineAcademicCap,
   career: HiOutlineMap,
+  book: HiOutlineBookOpen,
+  aptitude: HiOutlineRectangleStack,
+  hackerrank: HiOutlineGlobeAlt,
+  podcast: HiOutlineSpeakerWave,
 };
 
 const sectionLabels: Record<string, string> = {
   menu: "Menu",
+  library: "Book Library",
   practice: "Practice",
   learn: "Learn",
   career: "Career",
@@ -123,7 +131,7 @@ function NavLink({
 
 export function Sidebar() {
   const { collapsed, mobileOpen, toggleCollapsed, closeMobile } = useSidebar();
-  const sections = ["menu", "practice", "learn", "career"] as const;
+  const sections = ["menu", "library", "practice", "learn", "career"] as const;
 
   const sidebarContent = (
     <div className="flex h-full flex-col">

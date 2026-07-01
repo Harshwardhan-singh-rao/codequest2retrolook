@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { HiOutlineVideoCamera, HiOutlineUser } from "react-icons/hi2";
-import { PageHeader } from "@/components/layout/PageHeader";
 import { Card, CardTitle } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -15,10 +14,6 @@ export default function LiveClassesPage() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <PageHeader
-        title="Live Classes"
-        description="Join upcoming live sessions with instructors"
-      />
       <div className="space-y-4">
         {upcomingClasses.map((cls, i) => (
           <motion.div

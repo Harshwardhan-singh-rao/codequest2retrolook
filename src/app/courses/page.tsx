@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { PageHeader } from "@/components/layout/PageHeader";
 import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Badge } from "@/components/ui/Badge";
@@ -15,10 +14,6 @@ export default function CoursesPage() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <PageHeader
-        title="Courses"
-        description="Browse and continue your enrolled courses"
-      />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {courses.map((course, i) => (
           <motion.div

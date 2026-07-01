@@ -62,6 +62,9 @@ body {
   background: var(--outer-background);
   color: var(--text-primary);
   font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer utilities {
@@ -81,4 +84,14 @@ h4,
 h5,
 h6 {
   font-family: var(--font-poppins), system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+p, span, a, li, td, th, label, input, button {
+  font-weight: 500;
+}
+
+.text-text-secondary {
+  font-weight: 600;
 }

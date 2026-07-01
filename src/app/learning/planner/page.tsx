@@ -1,4 +1,3 @@
-import { PageHeader } from "@/components/layout/PageHeader";
 import { HiOutlinePlus } from "react-icons/hi2";
 import { Button } from "@/components/ui/Button";
 
@@ -8,10 +7,6 @@ export default function LearningPlannerPage() {
   return (
     <div className="flex h-full flex-col gap-6">
       <div className="flex items-start justify-between">
-        <PageHeader 
-          title="Learning Planner" 
-          description="Plan your weekly study goals and track your progress." 
-        />
         <Button size="sm" className="hidden sm:flex">
           <HiOutlinePlus className="mr-2 h-4 w-4" />
           Add Task

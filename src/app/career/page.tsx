@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { HiOutlineBriefcase, HiOutlineMap } from "react-icons/hi2";
-import { PageHeader } from "@/components/layout/PageHeader";
 import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
 import { CareerChart } from "@/components/charts/CareerChart";
 import { Badge } from "@/components/ui/Badge";
@@ -23,10 +22,8 @@ export default function CareerPage() {
       transition={{ duration: 0.3 }}
       className="space-y-6"
     >
-      <PageHeader
-        title="Career"
-        description="Track career readiness and explore job opportunities"
-      />
+
+
 
       <Card hover>
         <div className="flex items-start gap-4">

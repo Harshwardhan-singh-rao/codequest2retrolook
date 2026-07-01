@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { HiOutlineQuestionMarkCircle, HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
-import { PageHeader } from "@/components/layout/PageHeader";
 import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 
@@ -32,10 +31,6 @@ export default function SupportPage() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <PageHeader
-        title="Support"
-        description="Get help and find answers to common questions"
-      />
       <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Card hover className="text-center">
           <HiOutlineChatBubbleLeftRight className="mx-auto h-10 w-10 text-primary" />
