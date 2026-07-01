@@ -4,10 +4,10 @@
   --primary: #f59e0b; /* Amber/Orange accent */
   --secondary: #0a0a0a; /* Black button color */
   --accent: #3b82f6; /* Blue for links/accents */
-  --outer-background: #efe8df; /* Browser window background */
-  --background: #f5eee6; /* App main content background */
-  --sidebar: #8c6b4a; /* Darker brown sidebar */
-  --card: #ffffff; /* White cards */
+  --outer-background: #EAE0D2; /* Browser window background */
+  --background: #906D4B; /* App main content background */
+  --sidebar: #13191F; /* Dark charcoal sidebar */
+  --card: #D7C9AE; /* Beige cards */
   --text-primary: #1a1a1a;
   --text-secondary: #6b635e;
   --border: #d4c5b8;
@@ -24,10 +24,10 @@
   --primary: #f59e0b;
   --secondary: #0a0a0a;
   --accent: #3b82f6;
-  --outer-background: #efe8df;
-  --background: #f5eee6;
-  --sidebar: #8c6b4a;
-  --card: #ffffff;
+  --outer-background: #EAE0D2;
+  --background: #906D4B;
+  --sidebar: #13191F;
+  --card: #D7C9AE;
   --text-primary: #1a1a1a;
   --text-secondary: #6b635e;
   --border: #d4c5b8;

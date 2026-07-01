@@ -39,7 +39,7 @@ export const navItems: NavItem[] = [
   { label: "SQL Practice", href: "/practice-hub/sql", icon: "database", section: "practice" },
   { label: "Typing Practice", href: "/practice-hub/typing", icon: "keyboard", section: "practice" },
   { label: "Power BI Practice", href: "/practice-hub/power-bi", icon: "chart", section: "practice" },
-  { label: "Quiz", href: "/practice-hub/quiz", icon: "quiz", section: "practice" },
+  { label: "Quiz", href: "/quiz", icon: "quiz", section: "practice" },
   { label: "Flow Path", href: "/learning/flow", icon: "flow", section: "practice", badge: "soon" },
   { label: "Calendar", href: "/calendar", icon: "calendar", section: "learn" },
   { label: "Learning Planner", href: "/learning/planner", icon: "planner", section: "learn" },

@@ -27,7 +27,7 @@ export function Header({ title }: { title?: string }) {
   }, []);
 
   return (
-    <header className="sticky top-0 z-30 flex items-center justify-between bg-background/80 px-4 py-4 sm:px-6 pt-6 backdrop-blur-md">
+    <header className="relative flex items-center justify-between bg-background px-4 py-4 sm:px-6 pt-6">
       <div className="flex items-center gap-3">
         <button
           onClick={toggleMobile}

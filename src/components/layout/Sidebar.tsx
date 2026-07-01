@@ -90,15 +90,15 @@ function NavLink({
       className={cn(
         "group relative flex items-center gap-3 rounded-[12px] px-3 py-2.5 text-sm font-medium transition-all duration-200",
         isActive
-          ? "text-black font-bold"
-          : "text-black/70 hover:bg-black/20 hover:shadow-[0_4px_12px_rgba(0,0,0,0.6)] hover:text-black",
+          ? "text-white font-bold"
+          : "text-white/70 hover:bg-white/10 hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)] hover:text-white",
         isLocked && "cursor-not-allowed opacity-60",
       )}
     >
       {isActive && (
         <motion.span
           layoutId="sidebar-active"
-          className="absolute inset-0 rounded-[12px] bg-black/10 shadow-sm"
+          className="absolute inset-0 rounded-[12px] bg-white/10 shadow-sm"
           transition={{ type: "spring", stiffness: 350, damping: 30 }}
         />
       )}
@@ -113,7 +113,7 @@ function NavLink({
           ) : item.badge === "locked" ? (
             <HiOutlineLockClosed className="relative z-10 h-3.5 w-3.5 text-gray-500" />
           ) : (
-            <HiOutlineArrowRight className="relative z-10 h-5 w-5 shrink-0 stroke-[2.5px] text-black -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+            <HiOutlineArrowRight className="relative z-10 h-5 w-5 shrink-0 stroke-[2.5px] text-white -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
           )}
         </>
       )}
@@ -130,26 +130,26 @@ export function Sidebar() {
       <div className="flex items-center justify-between px-4 py-5">
         {!collapsed && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2.5">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black shadow-sm">
-              <span className="text-[#8c6b4a] text-xs font-bold font-mono tracking-tighter">&lt;/&gt;</span>
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 shadow-sm">
+              <span className="text-white text-xs font-bold font-mono tracking-tighter">&lt;/&gt;</span>
             </div>
-            <span className="font-[family-name:var(--font-poppins)] text-[18px] tracking-tight font-bold text-black">
+            <span className="font-[family-name:var(--font-poppins)] text-[18px] tracking-tight font-bold text-white">
               CodeQuest
             </span>
           </motion.div>
         )}
         {collapsed && (
           <div 
-            className="mx-auto flex h-8 w-8 items-center justify-center rounded-full bg-black shadow-sm cursor-pointer hover:scale-105 transition-transform"
+            className="mx-auto flex h-8 w-8 items-center justify-center rounded-full bg-white/10 shadow-sm cursor-pointer hover:scale-105 transition-transform"
             onClick={toggleCollapsed}
             title="Expand Sidebar"
           >
-            <span className="text-[#8c6b4a] text-xs font-bold font-mono tracking-tighter">&lt;/&gt;</span>
+            <span className="text-white text-xs font-bold font-mono tracking-tighter">&lt;/&gt;</span>
           </div>
         )}
         <button
           onClick={closeMobile}
-          className="rounded-lg p-1.5 text-black/70 hover:bg-black/10 hover:text-black md:hidden"
+          className="rounded-lg p-1.5 text-white/70 hover:bg-white/10 hover:text-white md:hidden"
           aria-label="Close sidebar"
         >
           <HiOutlineXMark className="h-5 w-5" />
@@ -163,7 +163,7 @@ export function Sidebar() {
           return (
             <div key={section} className="mb-3">
               {!collapsed && (
-                <p className="mb-2 px-3 text-[11px] font-bold uppercase tracking-wider text-black/60">
+                <p className="mb-2 px-3 text-[11px] font-bold uppercase tracking-wider text-white/50">
                   {sectionLabels[section]}
                 </p>
               )}
@@ -184,7 +184,7 @@ export function Sidebar() {
         {!collapsed && (
           <Link
             href="/support"
-            className="mb-3 flex items-center gap-3 rounded-[12px] px-3 py-2.5 text-sm font-medium text-black/70 hover:bg-black/20 hover:shadow-[0_4px_12px_rgba(0,0,0,0.6)] hover:text-black"
+            className="mb-3 flex items-center gap-3 rounded-[12px] px-3 py-2.5 text-sm font-medium text-white/70 hover:bg-white/10 hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)] hover:text-white"
           >
             <HiOutlineChatBubbleLeftRight className="h-4 w-4" />
             Feedback
@@ -194,7 +194,7 @@ export function Sidebar() {
           href="/login"
           onClick={() => sessionStorage.removeItem("cq_user_name")}
           className={cn(
-            "flex w-full items-center gap-3 rounded-[12px] bg-black px-4 py-3 text-sm font-medium text-white transition-all hover:bg-black/80 shadow-sm",
+            "flex w-full items-center gap-3 rounded-[12px] bg-white/10 px-4 py-3 text-sm font-medium text-white transition-all hover:bg-white/20 shadow-sm",
             collapsed && "justify-center px-0",
           )}
           aria-label="Logout"
