@@ -98,8 +98,8 @@ function NavLink({
       className={cn(
         "group relative flex items-center gap-3 rounded-[12px] px-3 py-2.5 text-sm font-medium transition-all duration-200",
         isActive
-          ? "text-white font-bold"
-          : "text-white/70 hover:bg-white/10 hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)] hover:text-white",
+          ? "text-[#F4EEDC] font-bold"
+          : "text-[#F4EEDC]/70 hover:bg-white/10 hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)] hover:text-[#F4EEDC]",
         isLocked && "cursor-not-allowed opacity-60",
       )}
     >
@@ -141,7 +141,7 @@ export function Sidebar() {
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 shadow-sm">
               <span className="text-white text-xs font-bold font-mono tracking-tighter">&lt;/&gt;</span>
             </div>
-            <span className="font-[family-name:var(--font-poppins)] text-[18px] tracking-tight font-bold text-white">
+            <span className="font-[family-name:var(--font-poppins)] text-[18px] tracking-tight font-bold text-[#F4EEDC]">
               CodeQuest
             </span>
           </motion.div>
@@ -157,7 +157,7 @@ export function Sidebar() {
         )}
         <button
           onClick={closeMobile}
-          className="rounded-lg p-1.5 text-white/70 hover:bg-white/10 hover:text-white md:hidden"
+          className="rounded-lg p-1.5 text-[#F4EEDC]/70 hover:bg-white/10 hover:text-[#F4EEDC] md:hidden"
           aria-label="Close sidebar"
         >
           <HiOutlineXMark className="h-5 w-5" />
@@ -171,7 +171,7 @@ export function Sidebar() {
           return (
             <div key={section} className="mb-3">
               {!collapsed && (
-                <p className="mb-2 px-3 text-[11px] font-bold uppercase tracking-wider text-white/50">
+                <p className="mb-2 px-3 text-[11px] font-bold uppercase tracking-wider text-[#F4EEDC]/50">
                   {sectionLabels[section]}
                 </p>
               )}
@@ -192,7 +192,7 @@ export function Sidebar() {
         {!collapsed && (
           <Link
             href="/support"
-            className="mb-3 flex items-center gap-3 rounded-[12px] px-3 py-2.5 text-sm font-medium text-white/70 hover:bg-white/10 hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)] hover:text-white"
+            className="mb-3 flex items-center gap-3 rounded-[12px] px-3 py-2.5 text-sm font-medium text-[#F4EEDC]/70 hover:bg-white/10 hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)] hover:text-[#F4EEDC]"
           >
             <HiOutlineChatBubbleLeftRight className="h-4 w-4" />
             Feedback
@@ -202,7 +202,7 @@ export function Sidebar() {
           href="/login"
           onClick={() => sessionStorage.removeItem("cq_user_name")}
           className={cn(
-            "flex w-full items-center gap-3 rounded-[12px] bg-white/10 px-4 py-3 text-sm font-medium text-white transition-all hover:bg-white/20 shadow-sm",
+            "flex w-full items-center gap-3 rounded-[12px] bg-white/10 px-4 py-3 text-sm font-medium text-[#F4EEDC] transition-all hover:bg-white/20 shadow-sm",
             collapsed && "justify-center px-0",
           )}
           aria-label="Logout"
